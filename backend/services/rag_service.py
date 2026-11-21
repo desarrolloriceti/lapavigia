@@ -23,7 +23,9 @@ def load_patterns():
 
             # Insertar en ChromaDB
             if patterns:
-                rag_collection.delete()  # Limpiar colección existente
+                existing = rag_collection.get()
+                if existing["ids"]:
+                    rag_collection.delete(ids=existing["ids"])  # Limpiar colección existente
 
                 for pattern in patterns:
                     rag_collection.add(
