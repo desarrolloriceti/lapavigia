@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapa vigIA - Plataforma Antifraude Costa Rica</title>
+    <meta name="description" content="Plataforma antifraude PWA para Costa Rica. Detecta y reporta fraudes en tiempo real.">
+    <meta name="theme-color" content="#1B4332">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('Service Worker registrado'))
+                .catch(err => console.log('Error registrando Service Worker:', err));
+        }
+    </script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <h1>Lapa vigIA</h1>
+            </div>
+            <p class="subtitle">Plataforma Antifraude Costa Rica</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="text">Texto</button>
+                <button class="tab" data-tab="url">URL</button>
+                <button class="tab" data-tab="phone">Teléfono</button>
+                <button class="tab" data-tab="image">Imagen</button>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <!-- Text Tab -->
+                <div class="tab-content" id="text-tab">
+                    <textarea
+                        id="text-input"
+                        class="input-field"
+                        placeholder="Pega aquí el texto a analizar..."
+                        rows="6"
+                    ></textarea>
+                    <button id="analyze-btn" class="analyze-btn">
+                        <span>Analizar</span>
+                        <svg class="analyze-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- URL Tab -->
+                <div class="tab-content" id="url-tab">
+                    <input
+                        type="url"
+                        id="url-input"
+                        class="input-field"
+                        placeholder="https://ejemplo.com"
+                    >
+                    <button id="analyze-btn-url" class="analyze-btn">
+                        <span>Analizar URL</span>
+                        <svg class="analyze-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Phone Tab -->
+                <div class="tab-content" id="phone-tab">
+                    <input
+                        type="tel"
+                        id="phone-input"
+                        class="input-field"
+                        placeholder="+506 2222-2222"
+                    >
+                    <button id="analyze-btn-phone" class="analyze-btn">
+                        <span>Analizar Teléfono</span>
+                        <svg class="analyze-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Image Tab -->
+                <div class="tab-content" id="image-tab">
+                    <input
+                        type="file"
+                        id="image-input"
+                        class="input-field"
+                        accept="image/*"
+                    >
+                    <button id="analyze-btn-image" class="analyze-btn">
+                        <span>Analizar Imagen</span>
+                        <svg class="analyze-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Container -->
+            <div class="result-container" id="result-container" style="display: none;">
+                <div class="result-header">
+                    <h2>Resultado del Análisis</h2>
+                    <div class="score-circle" id="score-circle">
+                        <span class="score-number" id="score-number">0</span>
+                    </div>
+                </div>
+                <div class="result-details">
+                    <div class="level-badge" id="level-badge">Seguro</div>
+                    <p class="result-explanation" id="result-explanation"></p>
+                    <div class="recommendations">
+                        <h3>Recomendaciones:</h3>
+                        <ul id="recommendations-list"></ul>
+                    </div>
+                    <div class="sources">
+                        <h3>Fuentes consultadas:</h3>
+                        <ul id="sources-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Report Section -->
+            <div class="community-section">
+                <h2>Denuncia Comunitaria</h2>
+                <div class="report-form">
+                    <div class="form-group">
+                        <label>Tipo:</label>
+                        <select id="report-type">
+                            <option value="phone">Teléfono</option>
+                            <option value="url">URL</option>
+                            <option value="text">Texto</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Valor a reportar:</label>
+                        <input
+                            type="text"
+                            id="report-value"
+                            class="input-field"
+                            placeholder="Número, URL o texto..."
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label>Descripción:</label>
+                        <textarea
+                            id="report-description"
+                            class="input-field"
+                            placeholder="Describe el reporte..."
+                            rows="3"
+                        ></textarea>
+                    </div>
+                    <button id="submit-report-btn" class="submit-report-btn">
+                        <span>Reportar</span>
+                        <svg class="report-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 Lapa vigIA - Ariel Molbert - Oriceti</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/app.js"></script>
+</body>
+</html>

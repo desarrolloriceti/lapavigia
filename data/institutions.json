@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Banco de Costa Rica",
+    "official_domain": "bcr.cr",
+    "official_phone": "800-800-2222",
+    "official_whatsapp": null,
+    "website": "https://www.bcr.cr"
+  },
+  {
+    "name": "Banco Nacional de Costa Rica",
+    "official_domain": "bncr.fin.cr",
+    "official_phone": "800-200-5000",
+    "official_whatsapp": null,
+    "website": "https://www.bncr.fin.cr"
+  },
+  {
+    "name": "Banco Popular y de Desarrollo Comunal",
+    "official_domain": "bpdc.co.cr",
+    "official_phone": "800-222-6666",
+    "official_whatsapp": null,
+    "website": "https://www.bpdc.co.cr"
+  },
+  {
+    "name": "Cooperativa de Ahorro y Préstamo Coopelande",
+    "official_domain": "coopelande.co.cr",
+    "official_phone": "800-800-8666",
+    "official_whatsapp": null,
+    "website": "https://www.coopelande.co.cr"
+  },
+  {
+    "name": "Caja Costarricense de Seguro Social",
+    "official_domain": "ccss.go.cr",
+    "official_phone": "800-800-8080",
+    "official_whatsapp": "506-2222-9222",
+    "website": "https://www.ccss.go.cr"
+  },
+  {
+    "name": "Instituto Costarricense de Electricidad",
+    "official_domain": "ice.go.cr",
+    "official_phone": "808-8000",
+    "official_whatsapp": "506-2221-0800",
+    "website": "https://www.ice.go.cr"
+  },
+  {
+    "name": "OIJ",
+    "official_domain": "ojij.go.cr",
+    "official_phone": "2221-2000",
+    "official_whatsapp": null,
+    "website": "https://www.oij.go.cr"
+  },
+  {
+    "name": "Ministerio de Ciencia, Tecnología y Telecomunicaciones",
+    "official_domain": "micitt.go.cr",
+    "official_phone": "2518-5100",
+    "official_whatsapp": null,
+    "website": "https://www.micitt.go.cr"
+  },
+  {
+    "name": "Poder Judicial",
+    "official_domain": "poderjudicial.go.cr",
+    "official_phone": "2280-9000",
+    "official_whatsapp": null,
+    "website": "https://www.poderjudicial.go.cr"
+  },
+  {
+    "name": "Banco Central de Costa Rica",
+    "official_domain": "bccr.fi.cr",
+    "official_phone": "2251-3000",
+    "official_whatsapp": null,
+    "website": "https://www.bccr.fi.cr"
+  }
+]
