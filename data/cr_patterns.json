@@ -1,107 +1,107 @@
 [
   {
-    "id": 1,
-    "type": "suplantacion_bac",
-    "description": "Suplantación de identidad de Banco de Costa Rica (BAC). Los estafadores se hacen pasar por agentes del banco solicitando pagos urgentes o transferencias a cuentas falsas.",
-    "keywords": ["BAC", "Banco de Costa Rica", "agente", "transferencia", "pagos urgentes", "identificación", "contraseña"],
-    "risk_level": "alta"
+    "id": "CR001",
+    "type": "suplantacion_bancaria",
+    "description": "Mensaje falso del BAC Credomatic pidiendo verificar cuenta",
+    "keywords": ["BAC", "verificar cuenta", "suspendida", "clic aquí", "urgente"],
+    "risk_level": "alto"
   },
   {
-    "id": 2,
-    "type": "suplantacion_bcr",
-    "description": "Suplantación de Banco Crédito Agrícola de Costa Rica (BCR). Mensajes falsos solicitando verificación de cuenta o transferencias urgentes.",
-    "keywords": ["BCR", "Crédito Agrícola", "verificación", "cuenta bancaria", "transferencia", "agente", "urgente"],
-    "risk_level": "alta"
+    "id": "CR002",
+    "type": "suplantacion_bancaria",
+    "description": "Mensaje falso del Banco Nacional pidiendo actualizar datos",
+    "keywords": ["Banco Nacional", "BN", "actualizar", "datos", "vence", "bloqueo"],
+    "risk_level": "alto"
   },
   {
-    "id": 3,
-    "type": "suplantacion_bn",
-    "description": "Suplantación de Banco Nacional de Costa Rica (BN). Mensajes fraudulentos solicitando actualización de datos o pagos de servicios.",
-    "keywords": ["BN", "Banco Nacional", "actualización", "datos", "servicios", "pagos", "urgente"],
-    "risk_level": "alta"
+    "id": "CR003",
+    "type": "suplantacion_bancaria",
+    "description": "Suplantación del BCR solicitando clave dinámica",
+    "keywords": ["BCR", "Banco de Costa Rica", "clave dinámica", "token", "confirmar"],
+    "risk_level": "alto"
   },
   {
-    "id": 4,
-    "type": "suplantacion_coopeande",
-    "description": "Suplantación de Cooperativa de Ahorro y Préstamo Coopelande. Solicitan pagos urgentes a cuentas no oficiales.",
-    "keywords": ["Coopelande", "cooperativa", "pagos", "transferencia", "urgente", "Coopeande"],
-    "risk_level": "alta"
-  },
-  {
-    "id": 5,
+    "id": "CR004",
     "type": "sinpe_falso",
-    "description": "Mensajes de SINPE Falso solicitando pagos urgentes. El remitente se hace pasar por comercios o servicios.",
-    "keywords": ["SINPE", "pagos", "urgente", "comercio", "servicios", "transferencia", "Código"],
-    "risk_level": "muy alta"
+    "description": "Comprobante de SINPE Móvil falsificado para simular pago",
+    "keywords": ["SINPE", "transferencia", "comprobante", "recibido", "colones"],
+    "risk_level": "alto"
   },
   {
-    "id": 6,
-    "type": "premio_ice_falso",
-    "description": "Premios falsos del ICE (Instituto Costarricense de Electricidad). Solicitan datos personales o pagos para reclamar premios.",
-    "keywords": ["ICE", "premio", "gana", "sorteo", "premio grande", "pagos", "reclamar"],
-    "risk_level": "muy alta"
+    "id": "CR005",
+    "type": "premio_falso",
+    "description": "Mensaje falso del ICE ofreciendo premio o bono",
+    "keywords": ["ICE", "premio", "ganador", "bono", "reclamar", "gratis"],
+    "risk_level": "alto"
   },
   {
-    "id": 7,
-    "type": "estafa_marketplace",
-    "description": "Estafas de marketplace (MercadoLibre, Facebook Marketplace). Vendedores reciben pago y no entregan producto.",
-    "keywords": ["mercado", "compra", "venta", "MercadoLibre", "Facebook", "producto", "no entregado"],
-    "risk_level": "alta"
+    "id": "CR006",
+    "type": "premio_falso",
+    "description": "Estafa de lotería nacional falsa",
+    "keywords": ["lotería", "ganó", "premio mayor", "retirar", "impuesto"],
+    "risk_level": "alto"
   },
   {
-    "id": 8,
+    "id": "CR007",
+    "type": "marketplace",
+    "description": "Estafa en Facebook Marketplace o OLX pidiendo pago adelantado",
+    "keywords": ["transferencia primero", "SINPE antes", "adelanto", "reserva", "depósito"],
+    "risk_level": "medio"
+  },
+  {
+    "id": "CR008",
     "type": "phishing_ccss",
-    "description": "Phishing del CCSS (Caja Costarricense de Seguro Social). Mensajes falsos solicitando datos de seguro o pagos.",
-    "keywords": ["CCSS", "seguro", "datos", "pagos", "Caja", "seguro social", "urgente"],
-    "risk_level": "muy alta"
+    "description": "Phishing suplantando la CCSS para robar datos personales",
+    "keywords": ["CCSS", "Caja", "cita", "asegurado", "número patronal", "actualizar"],
+    "risk_level": "alto"
   },
   {
-    "id": 9,
-    "type": "estafa_inversion",
-    "description": "Estafas de inversión con promesas de ganancias rápidas y altas. Solicitan depósitos iniciales.",
-    "keywords": ["inversión", "ganancias", "rápidas", "depósito", "inversión segura", "ROI", "ganancia"],
-    "risk_level": "muy alta"
+    "id": "CR009",
+    "type": "suplantacion_bancaria",
+    "description": "Suplantación de Coopeande o cooperativas financieras",
+    "keywords": ["Coopeande", "cooperativa", "ahorro", "préstamo", "aprobado"],
+    "risk_level": "alto"
   },
   {
-    "id": 10,
-    "type": "estafa_trabajo_remoto",
-    "description": "Estafas de trabajo remoto con contratos falsos y pagos de "gastos iniciales".",
-    "keywords": ["trabajo", "remoto", "contrato", "gastos", "pago", "inicial", "home office"],
-    "risk_level": "alta"
+    "id": "CR010",
+    "type": "phishing_gobierno",
+    "description": "Mensaje falso del Ministerio de Hacienda sobre devolución de impuestos",
+    "keywords": ["Hacienda", "devolución", "impuestos", "renta", "depósito", "cuenta"],
+    "risk_level": "alto"
   },
   {
-    "id": 11,
-    "type": "suplantacion_bpdc",
-    "description": "Suplantación de Banco Popular y de Desarrollo Comunal (BPDC). Solicitan actualización de datos o pagos.",
-    "keywords": ["BPDC", "Popular", "desarrollo", "pagos", "urgente", "actualización", "datos"],
-    "risk_level": "alta"
+    "id": "CR011",
+    "type": "extorsion",
+    "description": "Llamada o mensaje extorsionando con secuestro exprés o deuda falsa",
+    "keywords": ["secuestro", "deuda", "pagar ahora", "familiar detenido", "policía falsa"],
+    "risk_level": "critico"
   },
   {
-    "id": 12,
-    "type": "estafa_lottery",
-    "description": "Estafas de lotería internacional. Solicitan comisiones o impuestos para liberar premios.",
-    "keywords": ["lotería", "ganaste", "premio", "comisión", "impuestos", "liberar", "ganancia"],
-    "risk_level": "muy alta"
+    "id": "CR012",
+    "type": "trabajo_falso",
+    "description": "Oferta de trabajo falsa pidiendo depósito o datos bancarios",
+    "keywords": ["trabajo desde casa", "gana dinero", "depósito inicial", "cuenta bancaria", "comisión"],
+    "risk_level": "medio"
   },
   {
-    "id": 13,
-    "type": "suplantacion_poder_judicial",
-    "description": "Suplantación del Poder Judicial. Notificaciones falsas de demandas o juicios.",
-    "keywords": ["Poder Judicial", "demanda", "juicio", "notificación", "fiscalía", "corte", "legal"],
-    "risk_level": "alta"
+    "id": "CR013",
+    "type": "romance_scam",
+    "description": "Perfil falso en redes sociales para estafa romántica",
+    "keywords": ["te amo", "dinero urgente", "emergencia", "conocerte", "extranjero", "herencia"],
+    "risk_level": "alto"
   },
   {
-    "id": 14,
-    "type": "estafa_citas_medicas",
-    "description": "Estafas de citas médicas falsas. Solicitan pagos por citas o servicios médicos.",
-    "keywords": ["cita", "médica", "hospital", "servicio", "pagos", "urgente", "salud"],
-    "risk_level": "alta"
+    "id": "CR014",
+    "type": "qr_malicioso",
+    "description": "Código QR falso en parquímetros, restaurantes o anuncios",
+    "keywords": ["escanear", "QR", "pago", "descuento", "verificar"],
+    "risk_level": "medio"
   },
   {
-    "id": 15,
-    "type": "estafa_cambio_direccion",
-    "description": "Estafas de cambio de dirección de correo o cuenta bancaria. Solicitan confirmación de movimientos.",
-    "keywords": ["cambio", "dirección", "correo", "cuenta", "confirmación", "movimiento", "actualización"],
-    "risk_level": "alta"
+    "id": "CR015",
+    "type": "phishing_banco",
+    "description": "Sitio web falso imitando banco costarricense para robar credenciales",
+    "keywords": ["iniciar sesión", "contraseña", "usuario", "banca en línea", "acceder"],
+    "risk_level": "critico"
   }
 ]
